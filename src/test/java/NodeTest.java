@@ -25,4 +25,27 @@ public class NodeTest {
         assertEquals("b", node.find("b").getName());
     }
 
+    @Test
+    void deleteByIDTest(){
+        Node node = new Node("a");
+        node.insert("b");
+        node.deleteByID("");
+        assertEquals(0, node.getChildrenSize());
+    }
+    @Test
+    void deleteByNameTest(){
+        Node node = new Node("a");
+        node.insert("b");
+        node.deleteByName("b");
+        assertEquals(0, node.getChildrenSize());
+    }
+    @Test
+    void deleteAllTest(){
+        Node node = new Node("a");
+        node.insert("b");
+        node.insert("c");
+        node.deleteAllChildren();
+        assertEquals(0, node.getChildrenSize());
+    }
+
 }
