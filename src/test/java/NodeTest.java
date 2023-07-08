@@ -48,4 +48,11 @@ public class NodeTest {
         assertEquals(0, node.getChildrenSize());
     }
 
+    @Test
+    void changeNameTest(){
+        Node node = new Node("a");
+        node.ChangeName("b");
+        assertEquals("b", node.getName());
+    }
+
 }

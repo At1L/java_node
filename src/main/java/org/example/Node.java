@@ -56,4 +56,8 @@ public class Node {
     public String getName(){
         return this.name;
     }
+
+    public  void ChangeName(String name){
+        this.name = name;gi
+    }
 }
