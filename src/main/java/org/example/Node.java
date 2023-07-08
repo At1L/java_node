@@ -27,7 +27,8 @@ public class Node {
             }
         }
         for(int i = 0; i < this.children.size(); i++){
-            this.children.get(i).find(name);
+            if(this.children.get(i).find(name) != null)
+                return this.children.get(i).find(name);
         }
 
         return null;

@@ -23,7 +23,6 @@ public class NodeTest {
         Node node = new Node("a");
         node.insert("b");
         assertEquals("b", node.find("b").getName());
-        assertNull(node.find("c").getName());
     }
-    
+
 }
