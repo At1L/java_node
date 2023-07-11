@@ -34,6 +34,24 @@ public class Node {
             }
         }
     }
+
+    public void levelorderTraversal(Node root, int level){
+        if(this.children.size() == 0){
+            for(int i = 0; i < level; ++i){
+                System.out.print("    ");
+            }
+            System.out.println(root.name);
+            return;
+        }
+
+        for(int i = 0; i < root.children.size(); ++i){
+            levelorderTraversal(root.children.get(i), level + 1);
+        }
+        for(int i = 0; i < level; ++i){
+            System.out.print("    ");
+        }
+        System.out.println(root.name);
+    }
     public void deleteAllChildren(){
         for(int i = 0; i < this.children.size(); i++){
                 children.remove(i);
@@ -58,6 +76,6 @@ public class Node {
     }
 
     public  void ChangeName(String name){
-        this.name = name;gi
+        this.name = name;
     }
 }
