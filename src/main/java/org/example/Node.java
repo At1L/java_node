@@ -47,10 +47,38 @@ public class Node {
         for(int i = 0; i < root.children.size(); ++i){
             levelorderTraversal(root.children.get(i), level + 1);
         }
+
         for(int i = 0; i < level; ++i){
             System.out.print("    ");
         }
         System.out.println(root.name);
+    }
+    public void printHTML(Node root){
+        System.out.println("<html>");
+        System.out.println("<title>Node</title>");
+        traverselHTML(root, 0);
+        System.out.println("</html>");
+
+    }
+
+    private void traverselHTML(Node root, int level){
+        if(this.children.size() == 0){
+            System.out.print("<p>");
+            for(int i = 0; i < level; ++i){
+                System.out.print("&emsp;");
+            }
+            System.out.println(root.name + "</p>");
+            return;
+        }
+
+        for(int i = 0; i < root.children.size(); ++i){
+            traverselHTML(root.children.get(i), level + 1);
+        }
+        System.out.print("<p>");
+        for(int i = 0; i < level; ++i){
+            System.out.print("&emsp;");
+        }
+        System.out.println(root.name + "</p>");
     }
     public void deleteAllChildren(){
         for(int i = 0; i < this.children.size(); i++){

@@ -6,6 +6,6 @@ public class Main {
         node.insert("b");
         node.insert("c");
         node.find("b").insert("d");
-        node.levelorderTraversal(node, 0);
+        node.printHTML(node);
     }
 }
